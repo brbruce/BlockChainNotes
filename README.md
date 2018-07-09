@@ -23,6 +23,23 @@ Trustless
 
 ? Smart contract ecosystem
 
+### Permissionless (Public) vs Permissioned (Federated) and Tokens
+Only permissionless ledgers (public Blockchains like Bitcoin or Ethereum), need some sort of incentive mechanism to guarantee that block validators do their job according to the predefined rules. 
+
+In permissioned (federated/consortium/private) distributed ledger systems, validators and block-creators may be doing their job for different reasons: i.e., if they are contractually obligated to do so. In permissioned environments, validators can only be members of the club and are manually and centrally controlled. 
+
+**Permissioned ledgers, therefore, don’t need a token.** Also, please note that the term blockchain in the context of such ledgers is highly controversial.
+
+### Tokens
+https://blockchainhub.net/tokens/
+
+* Intrinsic, Native or Built-in Tokens - of blockchains like Bitcoin, Ether, etc that serve as: (a) block validation incentives (‘miner rewards’); and (b) transaction spam prevention. The logic behind this is that if all transactions are paid, it limits the ability to spam.  
+
+* Application Tokens - With Ethereum, tokens can now easily be issued on the application layer through smart contracts on the Ethereum Blockchain as so-called complex dApp tokens or complex DAO tokens.  
+
+* Asset-backed tokens - that are issued by a party onto a blockchain for later redemption. They are the digital equivalent to physical assets. They are claims on an underlying asset (like the gold), that you need to claim from a specific issuer (the goldsmith). The transactions as tokens get passed between people are recorded on the blockchain. To claim the underlying asset, you send your token to the issuer, and the issuer sends you the underlying asset.  
+
+
 
 ## Components
 Distributed File System    
@@ -37,5 +54,18 @@ Distributed Web
 * Location-independent addressing  
 
 
+### Permissionless (Public) vs Permissioned (Federated) and Tokens
+Only permissionless ledgers (public Blockchains like Bitcoin or Ethereum), need some sort of incentive mechanism to guarantee that block validators do their job according to the predefined rules. 
 
+In permissioned (federated/consortium/private) distributed ledger systems, validators and block-creators may be doing their job for different reasons: i.e., if they are contractually obligated to do so. In permissioned environments, validators can only be members of the club and are manually and centrally controlled. 
 
+**Permissioned ledgers, therefore, don’t need a token.** Also, please note that the term blockchain in the context of such ledgers is highly controversial.
+
+### Tokens
+https://blockchainhub.net/tokens/
+
+* Intrinsic, Native or Built-in Tokens - of blockchains like Bitcoin, Ether, etc that serve as: (a) block validation incentives (‘miner rewards’); and (b) transaction spam prevention. The logic behind this is that if all transactions are paid, it limits the ability to spam.  
+
+* Application Tokens - With Ethereum, tokens can now easily be issued on the application layer through smart contracts on the Ethereum Blockchain as so-called complex dApp tokens or complex DAO tokens.  
+
+* Asset-backed tokens - that are issued by a party onto a blockchain for later redemption. They are the digital equivalent to physical assets. They are claims on an underlying asset (like the gold), that you need to claim from a specific issuer (the goldsmith). The transactions as tokens get passed between people are recorded on the blockchain. To claim the underlying asset, you send your token to the issuer, and the issuer sends you the underlying asset.  
