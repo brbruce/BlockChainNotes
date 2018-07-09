@@ -1,14 +1,22 @@
 # BlockChainNotes
 
 7/2/2018
-## Ethereum Whitepaper
+## Links
+#### Ethereum Whitepaper
 https://github.com/ethereum/wiki/wiki/White-Paper#applications
 
-## Blockchain Train Blog
+#### Blockchain Train Blog
 http://decentralized.blog/catching-the-blockchain-train.html
 
-## Safari - Blockchain for dummies
+#### Safari - Blockchain for dummies
 https://www.safaribooksonline.com/library/view/blockchain-for-dummies/9781119365594/01_9781119365617-ffirs.xhtml
+
+#### Ethereum
+https://media.consensys.net/the-state-of-the-ethereum-network-949332cb6895
+
+https://truffleframework.com/tutorials/ethereum-overview
+
+----------
 
 ## Terms
 
@@ -22,6 +30,8 @@ Trustless
 ? Proof of work
 
 ? Smart contract ecosystem
+
+? dApp - Distributed apps - 
 
 ### Permissionless (Public) vs Permissioned (Federated) and Tokens
 Only permissionless ledgers (public Blockchains like Bitcoin or Ethereum), need some sort of incentive mechanism to guarantee that block validators do their job according to the predefined rules. 
@@ -39,7 +49,11 @@ https://blockchainhub.net/tokens/
 
 * Asset-backed tokens - that are issued by a party onto a blockchain for later redemption. They are the digital equivalent to physical assets. They are claims on an underlying asset (like the gold), that you need to claim from a specific issuer (the goldsmith). The transactions as tokens get passed between people are recorded on the blockchain. To claim the underlying asset, you send your token to the issuer, and the issuer sends you the underlying asset.  
 
+### Consensus mechanism: Proof-of-work vs Proof-of-stake
+POW - Use CPU and electricity to calculate hash of the next block.  Get a reward of 12.5 BTC/block + transaction fee.  Difficulty increases to maintain constant time to solve.  
+POS - Less electricity required.  Next block assigned to user based on random or age-based, and size of user's stake.  No reward, only transaction fee.
 
+----------
 
 ## Components
 Distributed File System    
@@ -53,4 +67,9 @@ Distributed Web
     - Rendezvous Hashing  
 * Location-independent addressing  
 
+#### Distributed Apps (dApps)
 
+#### DApp Development Kits
+
+Truffle - https://truffleframework.com/  
+Smart contract building and testing.
