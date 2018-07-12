@@ -1,0 +1,89 @@
+7/18
+ 
+TR Blockchain Sessions
+
+04:00-04:15 Toronto/NY - Blockchain 101 and Learning Materials
+
+    What are Blockchains and how do they work?
+    Examples of public Blockchains and their characteristics
+    Why is Blockchain technology relevant to the business?
+    How can you further educate yourself on Blockchain?
+
+
+05:00-05:30 Toronto/NY - Alt-data: Valuing Cryptocurrencies Using On-chain Data
+
+    Network-based models for valuing public cryptocurrencies
+    The concept of alt-data, in relation to Blockchains
+    Using Ethereum's Web3 API to extract and categorize transactional data
+
+
+05:30-06:00 Toronto/NY - Meet a Blockchain start-up: SmartValor
+
+    How Smart Valor plans to use the Blockchain?
+    What opportunities and challenges of Blockchain technology?
+    What being part of the Thomson Reuters Start-up Incubator is like?
+
+
+06:00-06:45 Toronto/NY - KYX PoC Demo
+
+    The need for decentralized applications in the corporate world
+    A TR Labs project which utilizes a private Blockchain to facilitate communication directly between our customers
+
+
+07:00-07:45 Toronto/NY - Meet a Blockchain start-up: Kleros
+
+    The value proposition being developed for dispute resolution on the Blockchain
+    Understand the consensus model and how incentives work
+
+
+08:00-08:30 Toronto/NY - Demystifying cryptocurrencies and ICOs
+
+    Cryptocurrencies, what they are and how they work.
+    Initial Coin Offerings (ICO), what is their purpose and how are ICO tokens different from crypto currencies?
+    How are cryptocurrencies and ICOs enabled by Blockchain technology?
+
+09:00-09:45 Toronto/NY - Getting started with Ethereum development
+
+    Ethereum/Solidity development tools and frameworks
+    Thomson Reuters in-house infrastructure for Ethereum
+    Some hands on examples
+
+10:00-11:00 Toronto/NY - Tech Leadership panel
+
+    In this session, we will learn about the implications of Blockchain for Thomson Reuters and F&R as we 
+    explore the application of this technology to our existing solutions, as well as their role in the 
+    augmentation of new product innovation.
+
+
+11:00-11:45 Toronto/NY - Getting started with Hyperledger Fabric development
+
+    Hyperledger Fabric development tools and frameworks
+    Thomson Reuters in-house infrastructure for Hyperledger Fabric
+    Review of key components for interacting with Hyperledger
+    Bringing the components all together. A basic PoC Demo
+
+
+12:00-13:00 Toronto/NY - What Thomson Reuters and F&R businesses are doing with Blockchain
+
+    What is the strategy and what are the focus areas around Blockchain?
+    What is the competition doing?
+    Examples of ongoing projects/initiatives
+
+
+13:00-13:30 Toronto/NY - Presentation about Self-Sovereign Identity (SSI)
+
+    What SSI means?
+    How it protects us in a world of data breaches and identity theft, use cases, and current solutions.
+
+
+14:00-14:30 Toronto/NY - Future DLT Technology Deep Dive: Directed Acyclic Graphs
+
+    What is a Directed Acyclic Graph
+    Why a DAG is not a Blockchain
+    Why are the next generation DLTs using DAGs.
+
+
+14:30-15:00 Toronto/NY - Real-time VAT PoC  Demo
+
+    How can VAT (Value-Added Tax) be simplified using Blockchain and digital currency payments? 
+    The art of possible with a proof of concept e-commerce demo using Self-Sovreign Identity and the Ethereum Blockchain.

@@ -143,7 +143,9 @@ Bitcoin - Not private.  Transparent, easy to trace.
 
 https://masterthecrypto.com/guide-to-cryptocurrency-wallets/
 
+### UTXO (bitcoin) vs Accounts (Ethereum)
 
+https://ethereumbuilders.gitbooks.io/guide/content/en/design_rationale.html
 
 
 ----------
