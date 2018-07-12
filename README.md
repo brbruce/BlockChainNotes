@@ -16,7 +16,8 @@ https://bitcoin.org/en/developer-guide
 
 #### Ethereum
 https://github.com/ethereum/wiki/wiki/White-Paper  
-https://media.consensys.net/the-state-of-the-ethereum-network-949332cb6895
+https://media.consensys.net/the-state-of-the-ethereum-network-949332cb6895  
+https://dappsforbeginners.wordpress.com/  
 
 #### Truffle IDE Ethereum
 https://truffleframework.com/tutorials/ethereum-overview
@@ -47,6 +48,18 @@ Hyperleger, Distributed ledger technology (DLT)
 Decentralised Autonomous Organization (DAO)
 
 Miners, Minters/Forgers
+
+Oracles - Service which take external data and add as a transaction to be used in smart contracts.  Centralized???  "An oracle pushes the data onto the blockchain rather than a smart contract pulling it in."
+
+Solidity - Ethereum programming language for smart contracts.  
+https://solidity.readthedocs.io/en/v0.4.24/
+
+Gas?
+
+Internal vs external functions?
+
+
+--------------------
 
 ### Consensus algorithms
 
@@ -109,7 +122,7 @@ Tree structure where leaf hashes are based on the data in the leaves, and non-le
 
 One-time use ids
 
-### Hyperledger Fabric 
+### Hyperledger Fabric  
 
 Hyperledger Fabric is a permissioned blockchain infrastructure, originally contributed by IBM[19] and Digital Asset, providing a modular architecture with a delineation of roles between the nodes in the infrastructure, execution of Smart Contracts (called "chaincode" in Fabric) and configurable consensus and membership services. 
 
@@ -147,7 +160,6 @@ https://masterthecrypto.com/guide-to-cryptocurrency-wallets/
 
 https://ethereumbuilders.gitbooks.io/guide/content/en/design_rationale.html
 
-
 ----------
 
 ## Components
@@ -162,9 +174,130 @@ Distributed Web
     - Rendezvous Hashing  
 * Location-independent addressing  
 
-#### Distributed Apps (dApps)
+### Distributed Apps (dApps)
+
+https://blockchainhub.net/decentralized-applications-dapps/
+
+Decentralized applications (dApps) are applications that run on a P2P network of computers rather than a single computer. dApps, have existed since the advent of P2P networks. They are a type of software program designed to exist on the Internet in a way that is not controlled by any single entity.
+
+Decentralized applications don’t necessarily need to run on top of a blockchain network. BitTorrent, Popcorn Time, BitMessage, Tor, are all traditional dApps that run on a P2P network, but not on a Blockchain (which is a specific kind of P2P network).
+
+As opposed to simple smart contracts, in the classic sense of Bitcoin, that sends money from A to B, dApps have an unlimited number of participants on all sides of the market.
+
+#### Difference between dApps & Smart Contracts
+
+dApps are a ‘blockchain enabled’ website, where the Smart Contract is what allows it to connect to the blockchain. The easiest way to understand this is to understand how traditional websites operate.
+
+The traditional web application uses HTML, CSS and Javascript to render a page. It will also need to grab details from a database utilizing an API. When you go onto Facebook, the page will call an API to grab your personal data and display them on the page. 
+
+__Traditional websites: Front End → API → Database__
+
+dApps are similar to a conventional web application. The front end uses the exact same technology to render the page. The one critical difference is that instead of an API connecting to a Database, you have a Smart Contract connecting to a blockchain. 
+
+__dApp enabled website: Front End → Smart Contract → Blockchain__
+
+As opposed to traditional, centralized applications, where the backend code is running on centralized servers,  dApps have their backend code running on a decentralized P2P network. Decentralized applications consist of the whole package, from backend to frontend. The smart contract is only one part of the dApp.
+
+dApps can have frontend code and user interfaces written in any language (just like an app) that can make calls to its backend. Furthermore, its frontend can be hosted on decentralized storage such as Swarm or IPFS.
+
+For an application to be considered a dApp in the context of Blockchain, it must meet the following criteria:
+
+* Application must be completely open-source  
+It must operate autonomously, and with no entity controlling the majority of its tokens. The application may adapt its protocol in response to proposed improvements and market feedback, but the consensus of its users must decide all changes.
+
+* Application’s data and records of operation must be cryptographically stored  
+must be cryptographically stored in a public, decentralized blockchain in order to avoid any central points of failure.
+
+* Application must use a cryptographic token  
+(Bitcoin or a token native to its system) which is necessary for access to the application and any contribution of value from (miners/farmers) should be rewarded with the application’s tokens.
+
+* Application must generate tokens  
+according to a standard cryptographic algorithm acting as a proof of the value, nodes are contributing to the application (Bitcoin uses the Proof of Work Algorithm).
+
+
+?? DApps use public blockchain for data and records of operation.  What about log files?
+
+Dapps use distributed file system and 
 
 #### DApp Development Kits
 
 Truffle - https://truffleframework.com/  
 Smart contract building and testing.
+
+Metamask - https://metamask.io/  
+browser extension to run etherium dapps.
+
+### Distributed Autonomous Organization (DAO)
+
+https://www.coindesk.com/information/what-is-a-dao-ethereum/
+
+The goal is form a leaderless company, program rules at the beginning about how members can vote and how to release company funds and then... let it go.
+
+There are a few ways that The DAO intended to improve on the governance of today's organizations:
+
+* Anyone with internet access could hold DAO tokens or buy them
+
+* DAO creators could set whatever rules they voted on.
+
+In abstract, DAOs function similarly. They rely on smart contracts, or pre-programmed rules that describe what can happen in the system.
+
+---------------------
+
+## Blockchain Critisisms and Negative Reviews
+
+#### External events and smart contracts
+https://www.coindesk.com/three-smart-contract-misconceptions/
+
+Reacting to external events:
+
+A blockchain is a consensus-based system, meaning that it only works if every node reaches an identical state after processing every transaction and block.
+
+Everything that takes place on a blockchain must be completely deterministic, with no possible way for differences to creep in. The moment that two honest nodes disagree about the chain's state, the entire system becomes worthless.
+
+Now, recall that smart contracts are executed independently by every node on a chain. Therefore, if a smart contract retrieves some information from an external source, this retrieval is performed repeatedly and separately by each node. But because this source is outside of the blockchain, there is no guarantee that every node will receive the same answer.
+
+Perhaps the source will change its response in the time between requests from different nodes, or perhaps it will become temporarily unavailable. Either way, consensus is broken and the entire blockchain dies.
+
+(Use of Oracles to push data into the blockchain as solution)
+
+Causing external events:
+
+When it comes to smart contracts causing events in the outside world, a similar problem appears. For example, many like the idea of a smart contract which calls a bank's API in order to transfer money. But if every node is independently executing the code in the chain, who is responsible for calling this API?
+
+(Trusted service used to handle the event)
+
+#### Slow transactions
+
+https://datafloq.com/read/why-bitcoin-will-fail-what-will-come-next/3691?imm_mid=0f6ccf&cmp=em-na-na-na-newsltr_fintech_20171002
+
+#### Blockchain is hard
+
+https://medium.com/@jimmysong/why-blockchain-is-hard-60416ea4c5c
+
+#### Smart Contracts Security
+
+Smart contracts are programs which use data from the blockchain.  They have internal blockchains (?) for internal data (encapsulation).
+
+Security of the data inside smart contracts is an issue?  Visible to anyone with access to the blockchain?
+
+#### Ethereum DAO hack
+
+Smart contacts are not concurrent.  But they are reentrant.  Ethereum DAO hack.  $50M.
+
+http://hackingdistributed.com/2016/07/13/reentrancy-woes/
+
+https://github.com/ConsenSys/smart-contract-best-practices/blob/master/docs/known_attacks.md
+
+Do not perform external calls in contracts. If you do, ensure that they are the very last thing you do. If that's not possible, use mutexes to guard against reentrant calls. And use the mutexes in all of your functions, not just the ones that perform an external call.
+
+#### Ambiguity in Smart Contracts
+
+https://www.ibtimes.co.uk/pwc-blockchain-expert-pinpoints-sources-ambiguity-smart-contracts-1575778
+
+
+
+
+
+
+-------------------
+
