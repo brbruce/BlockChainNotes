@@ -69,6 +69,17 @@ Miners are incentivised with bitcoins for doing the work.
 
 ### Basic Operations:
 
+From Quiz:
+
+	What is the correct sequence involved in a block creation:
+
+	3. Transaction initiated
+	1. Transactions validated
+	2. Transactions Bundled & broadcasted
+	5. Proof of work consensus problem solved
+	4. Block added to the local chain and propagated to the network.
+
+
 Transaction validation is carried out independently by all miners.
 
 Transaction validation involves checking 20 criteria.
@@ -154,7 +165,7 @@ Etherium Virtual Machine (EVM)
 Contract is collection of code and data (state) that is stored at a specific address on the Ethereum blockchain.
 
 **Accounts**
-- External - EOA (Externally owned accounts)  Humans.  Controlled by public/private key pairs
+- External - EOA (Externally owned accounts)  Humans.  Controlled by **private** keys.
 - Contract accounts - Controlled by code.
 
 Each account has key/value storage, and a balance.
@@ -164,7 +175,7 @@ Each account has key/value storage, and a balance.
 - Gas price is set by creator of the contract, paid up-front.  Any leftover is refunded to the creator.
 - if you run out of gas, an exception is triggered and the changes are all reverted back.
 
-Storage, Memory, Stack
+**Storage, Memory, Stack**
 - Each account has Storage (key/values)
 - Memory - Each contract gets fresh cleared memory for each message call.  Read 256 bits.  Write 8 bits or 256 bits.  Must pay gas when expanding memory.  Gets more expensive quadratically.
 
@@ -207,6 +218,140 @@ Eth Block Details:
 
 ### Etherum Operations
 
+(10/25/2018)
+
+**Ether transfer** - Amount to transfer, target account, gas points (fees).
+
+Gas points are paid to the miner who adds the transaction block to the chain.
+
+**Ethereum Full Node** has:
+
+- Transaction initiation
+- validation
+- mining
+- block creation
+- smart contract execution
+- Ethereum Virtual Machine (EVM)
+
+**Smart contracts**
+
+Can be the target address of a transaction.  Activated and executed on the EVM.
+
+Inputs come from the `payload` field of the transaction.
+
+`state` of the SC is the value of all the variables defined.
+
+Result of the SC is stored in the `receipts`.
+
+Blockchain maintains both a state hash and receipt hash.
+
+**Transaction validity**
+
+- Check timestamp and nonce
+- availablity of sufficient fees for execution
+
+**Additional Reading**
+
+Ethereum vs BitCoin:
+
+	ethereum borrows heavily from bitcoin's protocol and its blockchain design, but tweaks it to support applications beyond money.
+
+	Ethereum aims to abstract away bitcoin's design, however, so that developers can create applications or agreements that have additional steps, new rules of ownership, alternative transaction formats or different ways to transfer state.
+
+	The structure of the ethereum blockchain is very similar to bitcoin's, in that it is a shared record of the entire transaction history. Every node on the network stores a copy of this history.
+
+	The big difference with ethereum is that its nodes store the most recent state of each smart contract, in addition to all of the ether transactions. (This is much more complicated than described, but the text below should help you get your feet wet.)
+
+UTXO vs Accounts:
+
+	Bitcoin uses unspent transaction outputs to track who has how much bitcoin.
+
+	While it sounds more complex, the idea is fairly simple. Every time a bitcoin transaction is made, the network 'breaks' the total amount as if it was paper money, issuing back bitcoins in a way that makes the data behave similarly to physical coins or change.
+
+	To make future transactions, the bitcoin network must add up all your pieces of change, which are classed as either 'spent' or 'unspent'.
+
+	Ethereum, on the other hand, uses accounts.
+
+Gas:
+
+	
+- Gas is the way that fees are calculated
+- The fees are still paid in ether, though, which is different from gas
+- The gas cost is the amount of work that goes into something, like the number of hours of labour, whereas the gas price is like the hourly wage you pay for the work to be done. The combination of the two determines your total transaction fee.
+- If your gas price is too low, no one will process your transaction
+- If your gas price is fine but the gas cost of your transaction runs "over budget" the transaction fails but still goes into the blockchain, and you don't get the money back for the work that the labourers did.
+- This makes sure that nothing runs forever, and that people will be careful about the code that they run. It keeps both miners and users safe from bad code!
+
+### Incentive Model
+
+**Gas Points**
+
+Stanadrdized fixed price of operations.  Value does not vary like Ether.
+
+Ex. of operations:
+
+- Step = 1 gas pt
+- Load from mem = 20 
+- Store into mem = 100
+- Transaction base fee = 21000
+- Contract creation = 53000
+- etc
+
+Gas items in a block:
+
+- Gas Limit - Max amount that will be paid
+- Gas Spent - Actual amount of gas spent in the transaction.
+
+**Mining Incentive Model**
+
+Miner who solves the POW puzzle and creates an new block gets:
+- Base fee of 3 ether and transaction fees.
+
+Also gets fees and gas points for execution of a smart contract transaction.
+
+`Ommers` - Solved the puzzle but did not win.  Also get a small part of the total gas points.
+
+Blocks created by ommers are called Ommer blocks.  Added as Side blocks.  
+
+**Additional Reading**
+
+	3 ethers are created every block (roughly 15 seconds) to the miner of the block
+
+	0.625-2.625 ethers are sometimes sent to another miner if they were also able to find a solution but his block wasn't included (called uncle/aunt reward)
+
+Converting from POW to POS in 2018-2019.  Called Casper.  Based on GHOST protocol. (Greedy Heaviest-Observed Sub-Tree)
+
+Casper is a security-deposit based economic consensus protocol.
+
+**Ethereum Wallet Mist:**
+
+https://www.ethereum.org/ether
+
+Downloaded from Github.  Got errors initially. (Hanging on generating account)  Need to switch to test network (Ropsten) first, and restart before creating an account.  May need to restart a couple times.
+
+Created account Test.  Directed to save the keystore file from `C:\Users\Brian\AppData\Roaming\Ethereum`.  Saved in `C:\Users\Brian\Documents\_Tech Info & Serial Numbers\PublicPrivateKeys\Ethereum Mist Wallet Keystores`
+
+Quiz:
+
+Failed.
+
+1. Correct - 0xc253f0917b33b2947b4d9cdb7ad656cc0233ef1781984384284f3a91810a8a36
+2. Wrong - Total difficulty for the block.  I selected Difficulty which is just for the block, but I guess they want Total difficulty, which is really for the entire chain till that block.
+3. Correct - 913.268
+4. Correct - 0xf9fba58d8345bd3100c5adf3b8b51938e5da0a9d
+5. Correct - EOAs can send transactions (ether transfer or invoke a contract code)
+6. Wrong - External Owned Accounts (EOA) are controlled by ____.
+- Hash of the first transaction by that account
+- XXX - Public Key and Private Key
+- Correct ---> Private Key
+- Public Key
+7. Correct - Smart Contracts
+8. Correct - 22 gas
+9. Correct - 3,1,2,5,4
 
 
+Week 3 - 10/25/2018
+==============================
+
+### Public-Key Cryptography
 
