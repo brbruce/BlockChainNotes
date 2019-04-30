@@ -274,7 +274,6 @@ UTXO vs Accounts:
 
 Gas:
 
-	
 - Gas is the way that fees are calculated
 - The fees are still paid in ether, though, which is different from gas
 - The gas cost is the amount of work that goes into something, like the number of hours of labour, whereas the gas price is like the hourly wage you pay for the work to be done. The combination of the two determines your total transaction fee.
@@ -331,7 +330,7 @@ Downloaded from Github.  Got errors initially. (Hanging on generating account)  
 
 Created account Test.  Directed to save the keystore file from `C:\Users\Brian\AppData\Roaming\Ethereum`.  Saved in `C:\Users\Brian\Documents\_Tech Info & Serial Numbers\PublicPrivateKeys\Ethereum Mist Wallet Keystores`
 
-Quiz:
+**Quiz:**
 
 Failed.
 
@@ -350,8 +349,166 @@ Failed.
 9. Correct - 3,1,2,5,4
 
 
-Week 3 - 10/25/2018
+Week 3 - 10/25/2018 - 11/2/2018
 ==============================
 
 ### Public-Key Cryptography
+
+Hashing VS Asymmetric key encryption
+
+**Simple Symmetric key**
+
+Same key used for encrypting and decrypting.
+
+Easy to guess the key.
+
+How to distribute the key to the other party?
+
+How to deal with multiple unknown parties like blockchain?
+
+**Public Key Encyption (Asymmetric)**
+
+Public key and Private Key pair.  (Public key is derived from the private key.)
+
+Encrypt with private key, decrypt with public key, or encrypt with public key, and decrypt with private key.
+
+To send secure message, sign with your private key, then sign with the recipient's public key.  Recipient will decrypt with their private key, so no one else can decrypt.  Then they will decrypt with your public key, so they know you were the sender.
+
+Allows Digital Signatures to confirm a signer, and provide non-repudiation.
+
+* RSA - Common pub-priv implementation.  Password=less authentication (ssh).  Involves factoring numbers which are the product of two large primes. But Blockchain needs more efficent
+
+* ECC - Elliptic curve crypto - Stronger than RSA for same num of bits. (256 bits ECC = 3072 bits RSA.) Used by both Bitcoin and Ethereum.  Involves computing elliptic curve discrete logarithm (which is much harder than factoring).
+
+### Hashing
+
+What is hashing: Converts input of any length into a _unique_ fixed length value.  (= Number of bits)
+
+Hash algo should be One Way function (can't determine the original input), and Collision Free (unique).
+
+Use strong hash algo and large bit size.  256 bits.
+
+* SHA-3
+* SHA-256
+* Keccak
+
+256 bits = 2^256 possible combinations = 10^77 (10 with 77 zeros)
+
+**Simple hashing**
+
+Used when _fixed_ number of items (block header) or verifying composite block integrity.
+
+
+**Merkle tree hashing**
+
+Merkle tree is a simple binary tree with a root node, node hashes, leaf hashes, and leaves.
+
+In a Merkle tree, each non-leaf node is the hash of the values of their child nodes.
+
+Leaves have data.  Each leaf data has a leaf hash.  Pairs of leaves are hashed together into a node hash.  Pairs of nodes are hashed into other nodes, up to the root.
+
+You can add new data without having to rehash the entire tree.  Just create a new tree with the new data, and create a new root which connects the old tree and the new tree.
+
+You can also validate a single transaction using **only one path through the tree**, instead of looking at all transactions.
+
+Used when there are different number of items:
+* Account addresses
+* Digital signatures
+* Transaction hash
+* State hash
+* Receipt hash
+* Block header hash
+
+
+## Transaction Integrity
+
+We need:
+* Secure and unique account address
+* digital signature of sender for authorization
+* Verification that content of transaction has not been modified.
+
+**Addresses**
+
+1. 256 bit random number = private key
+2. Generate public key using ECC
+3. Public key is hashed to get the account address (20 bytes = 160 bits)
+
+** Transaction**
+
+Must be:
+* Authorized
+* Non-repudiable
+* Unmodifiable
+
+Data is hashed, and encrypted.  This is the digital signature.
+
+Receiver gets original data and the signature.  To verify integrity, they can recompute the hash and compare to the signature.
+
+For complete trans verification, also need to verify:
+* timestamp
+* Nonce
+* Account balances
+* sufficiency of fees
+
+## Securing Blockchain
+
+Etherium block contains:
+
+* Block Header
+* Transaction Hash or Root
+* State Hash or Root
+
+Integrity of each must be ensured.
+
+Ethereum block Hash is the hash of **all** the elements in the block header, including transaction root and state root hashes.
+
+Ethereum block hash is computed using Keccak (variant of SHA-3)
+
+Eth blocks contain 100s of transactions.  Transaction hash is computed using Merkle Tree Hash, to be efficient.
+
+Merkle tree hash also used for the state root hash, which has chained states from block to block.
+
+Also used for Receipt root hash.
+
+Smart contract executions in Eth results in State transitions.  Every state change requires state root (hash) recomputation.  Instead of recomputing hash for all the states, only the affected path needs to be recomputed.
+
+When a state changes, you only need to recompute it's hash, and the upper nodes, up to the root, which is much fewer than all the leaves.
+
+**Block Hash**
+
+Includes State, transaction and receipt root hashes, plus all the other data in the block header (including the **Previous block hash**), and the **Nonce**, and used to solve the Proof of Work puzzle.
+
+The block hash verifies the integrity of the block and the transactions.
+
+It also forms the chain link by embedding the previous block hash in the current block header.
+
+If any participant node (miner) tampers with the block, it's hash value will change, resulting in the mismatch of the hash values, which causes the local chain to be in an **invalid state**.  Other nodes will reject any future blocks from this miner.
+
+
+**Quiz:**
+
+1. Wrong - None\
+    Should be Transactions
+2. Hash of block #490624: 000000000000000000d4c8b9d5388e42bf084e29546357c63cba8324ed4ec8bf\
+    (Be careful of leading spaces on the merkle root hash)\
+    Version: 0x20000000\
+    Merkle Root Hash: 73effaecabddef72c9b6b738efb131c543370766b93d4cc15db995a9afb1a286\
+    Bits: 402713392\
+    Prev block hash: 0000000000000000004239f2a01d8f579bc0dbb214d0f874ece5db587bee3457\
+    Timestamp: Oct 19, 2017 10:35:32 AM\
+    Nonce: 3060038614
+3. Private key
+4. SHA-256
+5. ECC
+6. Original message cannot be retrieved
+7. 1,2,4
+8. Supports both user auth and integrity
+9. Security
+10. Private key
+
+
+Week 4 - 11/2/2018-
+==============================
+
+### Decentralized Systems
 
