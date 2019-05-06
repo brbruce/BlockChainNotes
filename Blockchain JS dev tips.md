@@ -1,5 +1,7 @@
 # Blockchain Devt Tips
 
+---------------------------------------------------------------------
+
 ## Tools for developing blockchain (Ethereum):
 
 - Ganache - Wallet and simulator for ethereum network and apis
@@ -82,56 +84,6 @@ Real volume excluding wash sales:
 
 
 
-## Advanced Ledger Features
-
-<https://developers.ripple.com/xrp-ledger-overview.html#modern-features-for-smart-contracts>
-
-A sample of advanced features in the XRP Ledger:
-
-- Payment Channels allow asynchronous balance changes as fast as you can create and validate signatures.
-
-- Escrow locks up XRP until a declared time passes or cryptographic condition is met.
-
-- DepositAuth lets users decide who can send them money and who can't.
-
-- A Decentralized Exchange lets users trade obligations and XRP on-ledger.
-
-- Invariant Checking provides an independent layer of protections against bugs in transaction execution.
-
-- Amendments provide smooth upgrades to the existing feature set, so the technology can continue to evolve without fracturing the ecosystem or causing uncertainty around times of transition.
-
-- Interledger - Interledger is an open protocol suite for sending payments across different ledgers. Like routers on the Internet, connectors route packets of money across independent payment networks. The open architecture and minimal protocol enable interoperability for any value transfer system. Interledger is not tied to any one company, blockchain, or currency.
-
-## Payment channels and Atomic Transactions
-
-<https://coincentral.com/exchange-union-beginner-guide/>
-
-### Payment Channels
->
-> Payment channels provide an instant way to transfer digital assets off-chain between two parties. The transactions are only recorded on the blockchain when the payment channel is first opened and when it’s closed. You can think of it as updating balances on both ends of the channel for each transfer. Once you close the payment channel, both parties get their respective final balances.
->
-> Payment channels are trustless – any disputes are resolved automatically through cryptography. And, transfers using them are secured by the underlying blockchain making them as reliable as exchanges on the blockchain itself.
->
-> Bitcoin’s Lightning Network and Ethereum’s Raiden Network are two of the most popular examples of payment channels.
->
-> Exchange Union utilizes Hashed Timelock Contracts (HTLCs) when connecting payment channels between exchanges. These contracts allow the platform to set-up XU nodes as trust-less intermediaries to route transfers through payment channels to multiple parties. This prevents exchanges from having to open up payment channels with every participant on the network. Instead, they can use a route of channels to facilitate transfers to their final destination.
->
-> Each platform participating in trades through Exchange Union needs to have an XU node and connect it to at least one other exchange for each digital asset with a payment channel.
-
-### Atomic Transactions
-
-> Cross-chain atomic swaps on payment channels
->
-> A trade always consists of two transfers across payment channels. Because of this, there’s an inherent risk of one party behaving dishonestly. After receiving their part of the trade, the first party could simply not transfer their funds to the other party. Via atomic swaps, it’s cryptographically ensured that both sides of the trade have to happen successfully. This makes trading on Exchange Union secure & trustless.
->
-> Atomic swaps use modified HTLCs to enable trades across payment channels. For example:
-
-    - Sally wants to trade her Litecoin for Ethereum Classic on Exchange A.
-    - Bob wants to trade his Ethereum Classic for Litecoin on Exchange B.
-    - Exchange A sends Sally’s funds to Exchange B on the Litecoin payment channel.
-    - Exchange B sends Bob’s funds to Exchange A on the Ethereum Classic payment channel.
-    - The unique HTLC guarantees that both sides of the trade happen successfully.
-
 ## How to buy and trade crypto
 
 ### Security
@@ -139,27 +91,119 @@ A sample of advanced features in the XRP Ledger:
 - 2FA - Google Authenticator or Authy
   - Recovery key - Save the input string when registring the 2FA, in case you lose your phone.
 
-- BackPhrase
+- Back Phrase - Seed phrase.  12 random words used to generate tree of private keys.  Can be used to regenerate all private keys.  Used as backup for a wallet.
 
 - Hardware wallet - Don't store funds on the exchange.  Buy hardware wallet like Ledger Nano S.
   - Ledger Nano S.
+
+- Whitelist of public addresses which are authorized to receive funds.
+
+- Antiphishing code word - Used on emails to prove the sender is the exchange.
+
+- Don't keep funds online in exchanges.  Transfer to private wallet and safeguard the app with long passwords or pins and 2FA, and store backups of the keys on encrypted USB drive stored in bank safe deposit box.
 
 ### Crypto Wallets
 
 Hot vs Cold - Online wallet vs offline.  
 
-- Hardware - Cold
 - Paper - Cold
-- Mobile - Cold or hot?
-- Desktop - Cold or hot?
-- Browser - Hot
+- Hardware - Cold
+- Desktop - Hot, keys are local
+- Mobile - Hot, keys are local
+- Browser - Hot, keys online
 
-HD Wallets - Uses 12 word master seed key to generate new private/public keys.  Only need to back up the master seed key. (BIP32)  SHA-256.
+HD Wallets - Hierarchical Deterministic. Uses 12 word master seed key to generate new private/public keys.  Only need to back up the master seed key. (BIP32)  SHA-256.
 
 - <https://coinsutra.com/hd-wallets-deterministic-wallet/>
+
+Multicurrency wallets have one private key for each coin type.  (Gets hard to manage)
 
 ### Fees and expenses
 
 Coinbase charges 0.5% spread on all transactions, plus a fee.  Fee is greater of flat fee or variable % (4%).  Best rate if you do direct transfer to/from bank acct.
 
 <https://support.coinbase.com/customer/portal/articles/2109597-buy-sell-bank-transfer-fees>
+
+Transfer fees - You will get charged a fee whenever you transfer coins, even between your own wallets.
+
+--------------------------------------------------------------------
+
+## My Exchanges and Wallets
+
+All wallet information is available in LastPass.
+
+### CoinBase Exchange
+
+- Popular exchange.
+
+- Nice interface, simple.  Shows favorite coins with prices and graphs.
+
+- Shows amounts in USD (easier to understand)
+
+- Has reports and tax info.
+
+- Bad - Asks for bank login and password.
+
+- Bad - Cannot exchange coin types directly.  Must sell one coin and then buy another coin, which has more transaction fees.
+
+- Bad - Does not take Credit card.  Bank acct and Debit card only.
+
+- Bad - No email confirmations.
+
+- Fees
+
+  - Purchase: Used $750 to buy BTC using debit card.  Received 0.13907594 BTC ($721.22) ($5,185.80/BTC).  Fee was $28.78. (Cheaper than Binance)
+
+  - Transfer: Sent 0.002 BTC ($10.50) to Trust Wallet.  Fee was 0.00008679 BTC ($0.46).  The fee is fixed, regardless of transfer amount.
+    - Fee is added to the amount sent.  Sent 0.002.  Deducted 0.00208679.  Received 0.002. (Cheaper than Binance)
+
+### Binance Exchange
+
+- One of the largest by volume and capitalization.
+
+- Advanced interface, has trading screens.
+
+- Uses Simplex for bank integration.
+
+- Can exchange coins directly.
+
+- Email confirmations.
+
+- Bad - Not much USD conversion info.
+
+- Bad - No reports or tax info.
+
+- Fees
+
+  - Purchase: Bought $750 of bitcoin.  Received 0.13730614 BTC (~$712.04).  Fee was ~$37.95. (More expensive than CoinBase)
+
+  - Transfer: Sent 0.002 BTC (~$10.50) to Trust Wallet.  Fee was 0.0005 BTC (~$2.70).  The fee is fixed, regardless of transfer amount.
+    - Fee is deducted from the amount sent.  Sent 0.002 but only received 0.0015.
+
+### Guarda Wallet
+
+- Only loads keys while running.  (Not sure if this is actually more secure or not)
+
+- Backup file includes encrypted keys.
+
+- Can exchange coins (Uses Guarda exchange)
+
+- Bad - Cannot set favorite coins.  See entire list. (Can delete all unused currencies to clean up list)
+
+- Bad - Cannot buy coins directly.
+
+- Bad - Not much market data or graphs.
+
+### Trust Wallet
+
+- Official wallet for Binance.  
+
+- Uses HD back phrase to generate keys and backup and restore.
+
+- Can set favorite coins list
+
+- Can view coin graph and market data.
+
+- Can buy coins using USD.  Uses Simplex (Same as Binance)
+
+- Bad - Cannot exchange coins
