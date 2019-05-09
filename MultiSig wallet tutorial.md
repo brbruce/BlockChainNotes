@@ -20,8 +20,6 @@ By default, Parity Ethereum runs a JSON-RPC HTTP server on port :8545 and a Web-
 
 <https://wiki.parity.io/FAQ>
 
-
-
 ### Parity Fether Wallet
 
 <https://github.com/paritytech/fether>

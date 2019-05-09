@@ -82,8 +82,6 @@ Real volume excluding wash sales:
 
 - IDEX
 
-
-
 ## How to buy and trade crypto
 
 ### Security
@@ -113,6 +111,8 @@ Hot vs Cold - Online wallet vs offline.
 - Browser - Hot, keys online
 
 HD Wallets - Hierarchical Deterministic. Uses 12 word master seed key to generate new private/public keys.  Only need to back up the master seed key. (BIP32)  SHA-256.
+
+NOTE: HD wallets generate new public addresses each time a transfer is received, to make it harder to track activity.  Must always get the latest public address when sending.
 
 - <https://coinsutra.com/hd-wallets-deterministic-wallet/>
 
