@@ -22,7 +22,7 @@ By default, Parity Ethereum runs a JSON-RPC HTTP server on port :8545 and a Web-
 
 <https://wiki.parity.io/FAQ>
 
-### Partity UI (Smart Contract loading)
+### XXXXX - Partity UI (Smart Contract loading)
 
 Use to load and compile the smart contract for the multisig wallet.
 
