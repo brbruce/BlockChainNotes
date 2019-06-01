@@ -1,12 +1,12 @@
 # Blockchain Devt Tips
 
----------------------------------------------------------------------
+---
 
 ## Tools for developing blockchain (Ethereum):
 
 - Ganache - Wallet and simulator for ethereum network and apis
 
-- Bitcoin-q - Comes with Bitcoin client.  
+- Bitcoin-q - Comes with Bitcoin client.
 
 - Ethereum wallet - Official wallet
 
@@ -16,29 +16,29 @@
 
 ## BlockChains
 
-- **Bitcoin** - Original.  Largest market cap.  Slow. TPS=7. Concensus = POW (Proof of work)
+- **Bitcoin** - Original. Largest market cap. Slow. TPS=7. Concensus = POW (Proof of work)
 
-- **Ethereum** - Open-source, blockchain platform, Solidity, Dapps.  Slow. TPS=20. POW. 
+- **Ethereum** - Open-source, blockchain platform, Solidity, Dapps. Slow. TPS=20. POW.
 
-  - ETH.  ERC20 tokens - Standard for custom tokens.
+  - ETH. ERC20 tokens - Standard for custom tokens.
 
-- **TRON** - Fork of Eth.  Fast. TPS=2000. POS (Proof of stake).  Less decentralized.  27 Elected block producers.
+- **TRON** - Fork of Eth. Fast. TPS=2000. POS (Proof of stake). Less decentralized. 27 Elected block producers.
 
-  - TRX token.  USDT token is USD stablecoin issued by Tether.
+  - TRX token. USDT token is USD stablecoin issued by Tether.
 
-- **EOS** - Fast.  TPS=4000.  POS.  21 block producers.
+- **EOS** - Fast. TPS=4000. POS. 21 block producers.
 
 - **Ripple** - Fast. TPS=1500. Trusted Validators.
 
   - <https://www.investinblockchain.com/what-is-ripple/>
 
-  - XRP token. Designed for financial institutions.  Centralized.
+  - XRP token. Designed for financial institutions. Centralized.
 
 - **Hyperledger** - Private blockchain
 
   - <https://blockgeeks.com/guides/hyperledger-vs-ethereum/>
 
-  - Fabric.  Enterprise blockchain
+  - Fabric. Enterprise blockchain
 
 ## DAPPS - Distributed Apps
 
@@ -54,13 +54,13 @@ Example Dapps:
 
 - **Ether** - Ethereum bc token
 
-- **ERC20** - Tokens based on Ethereum.  Can be created, managed by creating a smart contract.
+- **ERC20** - Tokens based on Ethereum. Can be created, managed by creating a smart contract.
 
   - Exchanges need to write custom code to talk to your contract to handle the tokens.
 
   - Wallet software also.
 
-  - ERC20 is a standard for tokens on ethereum to make them easier to manage.  6 mandatory functions and 3 optional.
+  - ERC20 is a standard for tokens on ethereum to make them easier to manage. 6 mandatory functions and 3 optional.
 
 ## Exchanges
 
@@ -68,11 +68,11 @@ Example Dapps:
 
 Real volume excluding wash sales:
 
-- **1) Binance** - $821M 24hr volume, not BTI verified
+- **1) Binance** - \$821M 24hr volume, not BTI verified
 
-- **3) Upbit** - $436M, BTI verified
+- **3) Upbit** - \$436M, BTI verified
 
-- **10) Coinbase** - $154M, BTI verified
+- **10) Coinbase** - \$154M, BTI verified
 
 ## Centralized vs Decentralized Exchanges
 
@@ -87,22 +87,24 @@ Real volume excluding wash sales:
 ### Security
 
 - 2FA - Google Authenticator or Authy
+
   - Recovery key - Save the input string when registring the 2FA, in case you lose your phone.
 
-- Back Phrase - Seed phrase.  12 random words used to generate tree of private keys.  Can be used to regenerate all private keys.  Used as backup for a wallet.
+- Back Phrase - Seed phrase. 12 random words used to generate tree of private keys. Can be used to regenerate all private keys. Used as backup for a wallet.
 
-- Hardware wallet - Don't store funds on the exchange.  Buy hardware wallet like Ledger Nano S.
+- Hardware wallet - Don't store funds on the exchange. Buy hardware wallet like Ledger Nano S.
+
   - Ledger Nano S.
 
 - Whitelist of public addresses which are authorized to receive funds.
 
 - Antiphishing code word - Used on emails to prove the sender is the exchange.
 
-- Don't keep funds online in exchanges.  Transfer to private wallet and safeguard the app with long passwords or pins and 2FA, and store backups of the keys on encrypted USB drive stored in bank safe deposit box.
+- Don't keep funds online in exchanges. Transfer to private wallet and safeguard the app with long passwords or pins and 2FA, and store backups of the keys on encrypted USB drive stored in bank safe deposit box.
 
 ### Crypto Wallets
 
-Hot vs Cold - Online wallet vs offline.  
+Hot vs Cold - Online wallet vs offline.
 
 - Paper - Cold
 - Hardware - Cold
@@ -110,25 +112,25 @@ Hot vs Cold - Online wallet vs offline.
 - Mobile - Hot, keys are local
 - Browser - Hot, keys online
 
-HD Wallets - Hierarchical Deterministic. Uses 12 word master seed key to generate new private/public keys.  Only need to back up the master seed key. (BIP32)  SHA-256.
+HD Wallets - Hierarchical Deterministic. Uses 12 word master seed key to generate new private/public keys. Only need to back up the master seed key. (BIP32) SHA-256.
 
-NOTE: HD wallets generate new public addresses each time a transfer is received, to make it harder to track activity.  Must always get the latest public address when sending.
+NOTE: HD wallets generate new public addresses each time a transfer is received, to make it harder to track activity. Must always get the latest public address when sending.
 
 - <https://coinsutra.com/hd-wallets-deterministic-wallet/>
 
-Multicurrency wallets have one private key for each coin type.  (Gets hard to manage)
+Multicurrency wallets have one private key for each coin type. (Gets hard to manage)
 
 ### Fees and expenses
 
-Coinbase charges 0.5% spread on all transactions, plus a fee.  Fee is greater of flat fee or variable % (4%).  Best rate if you do direct transfer to/from bank acct.
+Coinbase charges 0.5% spread on all transactions, plus a fee. Fee is greater of flat fee or variable % (4%). Best rate if you do direct transfer to/from bank acct.
 
 <https://support.coinbase.com/customer/portal/articles/2109597-buy-sell-bank-transfer-fees>
 
 Transfer fees - You will get charged a fee whenever you transfer coins, even between your own wallets.
 
---------------------------------------------------------------------
+---
 
-## My Exchanges and Wallets
+## Exchanges and Wallets
 
 All wallet information is available in LastPass.
 
@@ -136,7 +138,7 @@ All wallet information is available in LastPass.
 
 - Popular exchange.
 
-- Nice interface, simple.  Shows favorite coins with prices and graphs.
+- Nice interface, simple. Shows favorite coins with prices and graphs.
 
 - Shows amounts in USD (easier to understand)
 
@@ -144,9 +146,9 @@ All wallet information is available in LastPass.
 
 - Bad - Asks for bank login and password.
 
-- Bad - Cannot exchange coin types directly.  Must sell one coin and then buy another coin, which has more transaction fees.
+- Bad - Cannot exchange coin types directly. Must sell one coin and then buy another coin, which has more transaction fees.
 
-- Bad - Does not take Credit card.  Bank acct and Debit card only.
+- Bad - Does not take Credit card. Bank acct and Debit card only.
 
 - Bad - No email confirmations.
 
@@ -154,8 +156,8 @@ All wallet information is available in LastPass.
 
   - Purchase: Used $750 to buy BTC using debit card.  Received 0.13907594 BTC ($721.22) ($5,185.80/BTC).  Fee was $28.78. (Cheaper than Binance)
 
-  - Transfer: Sent 0.002 BTC ($10.50) to Trust Wallet.  Fee was 0.00008679 BTC ($0.46).  The fee is fixed, regardless of transfer amount.
-    - Fee is added to the amount sent.  Sent 0.002.  Deducted 0.00208679.  Received 0.002. (Cheaper than Binance)
+  - Transfer: Sent 0.002 BTC ($10.50) to Trust Wallet.  Fee was 0.00008679 BTC ($0.46). The fee is fixed, regardless of transfer amount.
+    - Fee is added to the amount sent. Sent 0.002. Deducted 0.00208679. Received 0.002. (Cheaper than Binance)
 
 ### Binance Exchange
 
@@ -175,20 +177,20 @@ All wallet information is available in LastPass.
 
 - Fees
 
-  - Purchase: Bought $750 of bitcoin.  Received 0.13730614 BTC (~$712.04).  Fee was ~$37.95. (More expensive than CoinBase)
+  - Purchase: Bought $750 of bitcoin.  Received 0.13730614 BTC (~$712.04). Fee was ~\$37.95. (More expensive than CoinBase)
 
-  - Transfer: Sent 0.002 BTC (~$10.50) to Trust Wallet.  Fee was 0.0005 BTC (~$2.70).  The fee is fixed, regardless of transfer amount.
-    - Fee is deducted from the amount sent.  Sent 0.002 but only received 0.0015.
+  - Transfer: Sent 0.002 BTC (~$10.50) to Trust Wallet.  Fee was 0.0005 BTC (~$2.70). The fee is fixed, regardless of transfer amount.
+    - Fee is deducted from the amount sent. Sent 0.002 but only received 0.0015.
 
 ### Guarda Wallet
 
-- Only loads keys while running.  (Not sure if this is actually more secure or not)
+- Only loads keys while running. (Not sure if this is actually more secure or not)
 
 - Backup file includes encrypted keys.
 
 - Can exchange coins (Uses Guarda exchange)
 
-- Bad - Cannot set favorite coins.  See entire list. (Can delete all unused currencies to clean up list)
+- Bad - Cannot set favorite coins. See entire list. (Can delete all unused currencies to clean up list)
 
 - Bad - Cannot buy coins directly.
 
@@ -196,7 +198,7 @@ All wallet information is available in LastPass.
 
 ### Trust Wallet
 
-- Official wallet for Binance.  
+- Official wallet for Binance.
 
 - Uses HD back phrase to generate keys and backup and restore.
 
@@ -204,6 +206,6 @@ All wallet information is available in LastPass.
 
 - Can view coin graph and market data.
 
-- Can buy coins using USD.  Uses Simplex (Same as Binance)
+- Can buy coins using USD. Uses Simplex (Same as Binance)
 
 - Bad - Cannot exchange coins
