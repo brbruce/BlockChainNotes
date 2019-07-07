@@ -110,9 +110,17 @@ SSH to server:
 
 scp file from server:
 
-    tar -cvf ethereum.tar --exclude node_modules/* --exclude quorum-examples/quorum/* --exclude quorum-examples/examples/* ethereum
+    tar -cvf ethereum.tar --exclude node_modules --exclude quorum-examples/quorum/* --exclude quorum-examples/examples/* ethereum
 
     scp -i "/c/Users/publi/OneDrive/Documents/_Tech Info/PublicPrivateKeys/TechLatest_Ethereum_Training_AWS_Keys/techlatest_ethereum.pem" -r ubuntu@ec2-3-215-177-74.compute-1.amazonaws.com:/home/ubuntu/Desktop/ethereum.tar .
+
+From frostbite. Do not use quotes around the private key file name, and don't use the -r parameter:
+
+    scp -i /C/Users/Brian/SkyDrive/Documents/_Tech\ Info/PublicPrivateKeys/TechLatest_Ethereum_Training_AWS_Keys/techlatest_ethereum.pem ubuntu@ec2-3-80-6-118.compute-1.amazonaws.com:/home/ubuntu/Desktop/ethereum/demos/pet-shop-tutorial/petshop.tar .
+
+To ssh, do not use quotes around the private key file name. Also, specify the user and host before the -i param instead of using the -l param.
+
+    ssh ubuntu@ec2-3-80-6-118.compute-1.amazonaws.com -i /C/Users/Brian/SkyDrive/Documents/_Tech\ Info/PublicPrivateKeys/TechLatest_Ethereum_Training_AWS_Keys/techlatest_ethereum.pem
 
 ### NPM installations on server
 
@@ -321,3 +329,5 @@ In the network log:
 ## Video 4: Petshop Overview
 
 ## Video 5: Petshop Development and Deployment
+
+Petshop - Download the Petshop Truffle box
